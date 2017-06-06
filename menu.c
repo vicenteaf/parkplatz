@@ -1,4 +1,4 @@
-void mainMenu(){
+void mainMenu(HashMap *mapAutos){
      int  opc=0;
      char opcstr[3];
 
@@ -9,17 +9,16 @@ void mainMenu(){
             switch(opc){
 
                     case 1:
-                         //addCar();
-                         printf("hola\n");
+                         addCar(mapAutos);
                          system("cls");
                          break;
 
                     case 2:
-                         //delCar();
+                         delCar(mapAutos);
                          system("cls");
                          break;
                     case 3:
-                         //schCar();
+                         schCar(mapAutos);
                          system("cls");
                          break;
                     default:

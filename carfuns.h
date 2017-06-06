@@ -1,12 +1,13 @@
 #ifndef _CARFUNS_H_
 #define _CARFUNS_H_
+#include "map.h"
+#include "list.h"
 
-/*
-void addCar();
+void addCar(HashMap *mapAutos);
 
-void schCar();
+void delCar(HashMap *mapAutos);
 
-void delCar();
-*/
+void schCar(HashMap *mapAutos);
+
 #include "carfuns.c"
 #endif

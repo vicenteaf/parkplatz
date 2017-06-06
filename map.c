@@ -7,7 +7,7 @@ HashMap* createMap(){
     return map;
 }
 
-void insert(HashMap* map, char *key, void* data){
+void insert(HashMap* map, char *key){
 
     int pos;
 
@@ -57,8 +57,10 @@ void* search(HashMap* map, char *key){
     int pos = hash(key,map->capac), start = pos;
     hashElem* elem = map->hashArray[pos];
     if(elem == NULL) return NULL;
-    if(elem->key == key) return elem->data;
-
+    if(elem->key == key) {
+      
+      return elem->data;
+    }
     for(pos++; pos != start ; pos++){  //se recorre el mapa a partir de la posicion que indica el hash en busca de la llave
         elem = map->hashArray[pos];
         if(elem == NULL) return NULL;

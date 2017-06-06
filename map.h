@@ -15,7 +15,7 @@ typedef struct{
 
 HashMap* createMap();  //crea un nuevo mapa
 
-void insert(HashMap* map, char *key, void* data);  //inserta un elemento en el mapa
+void insert(HashMap* map, char *key);  //inserta un elemento en el mapa
 void delete(HashMap* map, char *key);  //elimina un elemento del mapa
 void* search(HashMap* map, char *key);  //busca un elemento en el mapa
 

@@ -1,7 +1,9 @@
 #include "core.h"
 
+HashMap *mapAutos;
+
 int main(){
-    mapaAutos=createMap();
-    mainMenu();
+    mapAutos=createMap();
+    mainMenu(mapAutos);
     return 0;
 }

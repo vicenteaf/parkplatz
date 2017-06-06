@@ -7,10 +7,10 @@
 
 
 #include "menu.h"
-//#include "carfuns.h"
+#include "carfuns.h"
 #include "map.h"
 #include "list.h"
 
-static HashMap *mapaAutos;
+
 
 #endif
