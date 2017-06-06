@@ -9,7 +9,7 @@ void mainMenu(){
             switch(opc){
 
                     case 1:
-                         addCar();
+                         //addCar();
                          printf("hola\n");
                          system("cls");
                          break;
