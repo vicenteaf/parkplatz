@@ -1,6 +1,3 @@
-
-#include "list.h"
-
 List* createList(){
 
     List* L = (List*)malloc(sizeof(List));

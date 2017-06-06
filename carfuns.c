@@ -1,8 +1,8 @@
-void addCar(){
-  int key;
 
-}
+/*
+void addCar();
 
 void schCar();
 
 void delCar();
+*/

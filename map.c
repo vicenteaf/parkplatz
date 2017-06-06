@@ -1,18 +1,13 @@
-#include "map.h"
-
 HashMap* createMap(){
 
     HashMap* map = (HashMap*)malloc(sizeof(HashMap));
-
     map->size = 0;
     map->capac = 1;
-
     map->hashArray = (hashElem**)calloc(2,sizeof(hashElem*));
-
     return map;
 }
 
-void insert(HashMap* map, long key, void* data){
+void insert(HashMap* map, char *key, void* data){
 
     int pos;
 
@@ -22,14 +17,14 @@ void insert(HashMap* map, long key, void* data){
 
         if (map->hashArray[pos] == NULL){
             map->hashArray[pos] = (hashElem*)malloc(sizeof(hashElem));
-            map->hashArray[pos]->key = key;
-            map->hashArray[pos]->data = createList();  //se crea una lista en caso de que se deba almacenar mas de un elemento
-            pushBack(map->hashArray[pos]->data, data);
+            strcpy(map->hashArray[pos]->key,key);
+            //map->hashArray[pos]->data = createList();  //se crea una lista en caso de que se deba almacenar mas de un elemento
+            //pushBack(map->hashArray[pos]->data, data);
             map->size++;
             return;
         }
         if (map->hashArray[pos]->key == key){  //llaves iguales, sirve para a�os y generos
-            pushBack(map->hashArray[pos]->data, data);
+            //pushBack(map->hashArray[pos]->data, data);
             return;
         }
 
@@ -37,7 +32,7 @@ void insert(HashMap* map, long key, void* data){
     }
 }
 
-void delete(HashMap* map, long key){
+void delete(HashMap* map, char *key){
 
     int pos = hash(key,map->capac), start = pos;
     hashElem* elem = map->hashArray[pos];
@@ -57,7 +52,7 @@ void delete(HashMap* map, long key){
     }
 }
 
-void* search(HashMap* map, long key){
+void* search(HashMap* map, char *key){
 
     int pos = hash(key,map->capac), start = pos;
     hashElem* elem = map->hashArray[pos];
@@ -73,18 +68,6 @@ void* search(HashMap* map, long key){
     }
 
     return NULL;
-}
-
-int hash(long key, int capac){
-
-    double keyCpy = key;
-
-    keyCpy *= 0.6180339;  //parte decimal del radio dorado
-    keyCpy = keyCpy - (int)keyCpy;
-
-    int pos = capac * keyCpy;
-    if(pos) return pos;
-    return 1;
 }
 
 int hash(char *str, int capac){
@@ -117,11 +100,11 @@ void enlarge(HashMap* map){
         if(oldMap[i] != NULL){
 
             //se recorre la lista, ingresando cada elemento de ella en el mapa
-            for(first(oldMap[i]->data); current(oldMap[i]->data) != NULL; popFront(oldMap[i]->data) ){
-                insert(map,oldMap[i]->key,current(oldMap[i]->data));
-            }
+            //for(first(oldMap[i]->data); current(oldMap[i]->data) != NULL; popFront(oldMap[i]->data) ){
+            //    insert(map,oldMap[i]->key,current(oldMap[i]->data));
+          //  }
 
-            free(oldMap[i]->data);  //se libera la memoria de la lista
+          //  free(oldMap[i]->data);  //se libera la memoria de la lista
             free(oldMap[i]);  //se libera la memoria del hashElem
         }
     }

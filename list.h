@@ -1,8 +1,6 @@
 #ifndef _LIST_H_
 #define _LIST_H_
 
-#include <stdlib.h>
-
 typedef struct node{
     void* data;
     struct node* next;
@@ -36,4 +34,6 @@ void popFront(List* list);  //elimina el primer elemento de la lista
 void popBack(List* list);  //elimina el ultimo elemento de la lista
 void popCurrent(List* list);  //elimina el elemento en la posicion actual de la lista
 
+#include "list.c"
+#include "map.h"
 #endif
