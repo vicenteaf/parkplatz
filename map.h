@@ -21,7 +21,7 @@ void insert(HashMap* map, long key, void* data);  //inserta un elemento en el ma
 void delete(HashMap* map, long key);  //elimina un elemento del mapa
 void* search(HashMap* map, long key);  //busca un elemento en el mapa
 
-int hash(long key, int capac);  //funcion hash en base a multiplicacion por numero racional
+int hash(char *str, int capac);  //funcion hash en base a multiplicacion por numero racional
 void enlarge(HashMap* map);  //agranda el mapa cuando esta lleno en un 70%
 
 #endif

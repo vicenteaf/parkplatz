@@ -28,7 +28,7 @@ void insert(HashMap* map, long key, void* data){
             map->size++;
             return;
         }
-        if (map->hashArray[pos]->key == key){  //llaves iguales, sirve para años y generos
+        if (map->hashArray[pos]->key == key){  //llaves iguales, sirve para aï¿½os y generos
             pushBack(map->hashArray[pos]->data, data);
             return;
         }
@@ -86,6 +86,23 @@ int hash(long key, int capac){
     if(pos) return pos;
     return 1;
 }
+
+int hash(char *str, int capac){
+    unsigned int b = 378551;
+    unsigned int a = 63689;
+    unsigned int hash = 0;
+    unsigned int i = 0;
+
+    for(i=0;*str;(str++),i++){
+        hash=hash*a+(*str);
+        a=a*b;
+    }
+
+    return (hash%capac);
+}
+
+
+
 
 void enlarge(HashMap* map){
 
