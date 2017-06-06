@@ -39,6 +39,7 @@ void delete(HashMap* map, char *key){
     if(strcmp(elem->key,key)==0){
         free(elem);
         map->hashArray[pos] = NULL;
+        return;
     }
 
     for(pos++; pos != start ; pos++){
@@ -60,7 +61,7 @@ void* search(HashMap* map, char *key){
       return NULL;
     }
     if(strcmp(elem->key,key)==0) {
-      printf("hola 2");
+      printf("Se ha encontrado el Auto Ingrsado\n");
       system("pause");
       return elem->data;
     }
