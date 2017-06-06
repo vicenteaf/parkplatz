@@ -10,6 +10,7 @@ void delCar(HashMap *mapAutos){
     printf("Por Favor ingrese la patente que desea eliminar\n:");
     scanf("%s",patente);
     delete(mapAutos,patente);
+    printf("auto eliminado\n");
 }
 
 void schCar(HashMap *mapAutos){
